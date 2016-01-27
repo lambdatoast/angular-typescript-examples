@@ -1,5 +1,6 @@
 interface UserStore {
   all : () => angular.IHttpPromise<User[]>
+  create : (u: User) => angular.IHttpPromise<User>
 }
 
 angular.module('examples')
@@ -14,7 +15,12 @@ angular.module('examples')
       return $http.get<User>(url).then(data);
     }
 
+    function create(u: User) {
+      return $http.post<User>(url, u).then(data);
+    }
+
     return {
-      all: all
+      all: all,
+      create: create
     }
   });

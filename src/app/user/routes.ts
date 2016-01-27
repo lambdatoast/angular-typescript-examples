@@ -13,6 +13,12 @@ angular.module('examples').config(($stateProvider : angular.ui.IStateProvider) =
           return UserStore.all();
         }
       }
+    })
+    .state('user.create', {
+      url: '/create',
+      templateUrl: 'app/user/create.html',
+      controllerAs: 'ctrl',
+      controller: 'UserCreateCtrl'
     });
 });
 
