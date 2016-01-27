@@ -5,7 +5,7 @@ interface UserStore {
 
 angular.module('examples')
   .factory('UserStore', ($http : angular.IHttpService) => {
-    var url = 'http://localhost:3000/users';
+	var url = 'http://192.168.50.5:3000/users';
 
     function data<T>(r : { data: T }) : T {
       return r.data;
