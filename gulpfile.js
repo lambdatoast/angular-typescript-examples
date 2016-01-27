@@ -3,6 +3,12 @@ var gulp = require('gulp');
 var vendorSources = require('main-bower-files');
 var concat = require('gulp-concat');
 var templateCache = require('gulp-angular-templatecache');
+var serve = require('gulp-serve');
+
+gulp.task('serve', serve({
+	root: ['www'],
+	port: 3001
+}));
 
 gulp.task('build', ['tsc', 'vendor', 'templates']);
  
