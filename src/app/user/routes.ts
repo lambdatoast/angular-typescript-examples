@@ -23,14 +23,14 @@ angular.module('examples').config(($stateProvider : angular.ui.IStateProvider) =
     .state('user.view', {
 			url: '/view/:name',
 			resolve: {
-        user: (UserStore : UserStore, $stateParams : angular.ui.IStateParamsService) => {
+				user: (UserStore : UserStore, $stateParams : angular.ui.IStateParamsService) => {
 					return UserStore.all().then(function (xs: User[]) {
 						return xs.filter((u: User) => u.name === $stateParams['name'])[0];
 					});
-        }
+				}
 			},
 			views: {
-			  // no name: inserts template into closest parent ui-view
+				// no name: inserts template into closest parent ui-view
 				'' : {
 					templateUrl: 'app/user/view.html',
 					controllerAs: 'view',
