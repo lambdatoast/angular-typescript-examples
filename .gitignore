@@ -4,3 +4,5 @@
 node_modules/
 www/lib
 www/js/app.build.js
+typings/*
+!typings/tsd.d.ts
