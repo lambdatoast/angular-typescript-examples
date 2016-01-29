@@ -9,11 +9,6 @@ angular.module('examples')
       });
     }
     function setEvents(ul : angular.IAugmentedJQuery, scope : angular.IScope) {
-      /*
-      ul.on('scroll', function (e : JQueryEventObject) {
-      });
-      */
-
       var prev : number = null;
 
       function animLoop(render : (deltaT: number) => boolean, element : Element) {
