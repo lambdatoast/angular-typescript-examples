@@ -41,13 +41,9 @@ angular.module('examples')
           return true;
         } else {
           var liTop = li.getBoundingClientRect().top;
-          if (liTop < ulTop) {
-            liteList.forward(function () {
-              scope.$apply();
-            });
-          } else {
-            //liteList.rewind();
-          }
+          liteList.update(ulTop, liTop, function () {
+            scope.$apply();
+          });
           return true;
         }
       }, ul[0]);
