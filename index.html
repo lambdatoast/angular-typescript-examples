@@ -1,8 +1,8 @@
 <html>
   <head>
-    <script src="js/vendor.build.js"></script>
-    <script src="js/templates.js"></script>
-    <script src="js/app.build.js"></script>
+    {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+    {% } %}
   </head>
   <body ng-app="examples">
     Menu: <a ui-sref="user">Users</a>
