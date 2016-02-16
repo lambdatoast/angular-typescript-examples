@@ -1,12 +1,18 @@
+var homeHtml = require('./home.html');
+var listHtml = require('./list.html');
+var createHtml = require('./create.html');
+var viewHtml = require('./view.html');
+// templates required here so that webpack loaders act before angular boots.
+
 export = function ($stateProvider : angular.ui.IStateProvider) { 
   $stateProvider
     .state('user', {
       url: '/users',
-      templateUrl: 'app/user/home.html'
+      templateUrl: homeHtml
     })
     .state('user.list', {
       url: '/list',
-      templateUrl: 'app/user/list.html',
+      templateUrl: listHtml,
       controller: 'UserListCtrl as userListCtrl',
       resolve: {
         users: (UserStore : UserStore) => {
@@ -16,7 +22,7 @@ export = function ($stateProvider : angular.ui.IStateProvider) {
     })
     .state('user.create', {
       url: '/create',
-      templateUrl: 'app/user/create.html',
+      templateUrl: createHtml,
       controllerAs: 'ctrl',
       controller: 'UserCreateCtrl'
     })
@@ -32,7 +38,7 @@ export = function ($stateProvider : angular.ui.IStateProvider) {
 			views: {
 				// no name: inserts template into closest parent ui-view
 				'' : {
-					templateUrl: 'app/user/view.html',
+					templateUrl: viewHtml,
 					controllerAs: 'view',
 					controller: 'UserViewCtrl'
 				},
