@@ -1,4 +1,4 @@
-angular.module('examples').config(($stateProvider : angular.ui.IStateProvider) => { 
+export = function ($stateProvider : angular.ui.IStateProvider) { 
   $stateProvider
     .state('user', {
       url: '/users',
@@ -44,5 +44,5 @@ angular.module('examples').config(($stateProvider : angular.ui.IStateProvider) =
 				}
 			}
     });
-});
+}
 
